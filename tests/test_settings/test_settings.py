@@ -1,5 +1,5 @@
 import pytest
-from settings import Settings
+from settings import Settings, settings
 
 
 @pytest.fixture
@@ -11,7 +11,7 @@ def envs(monkeypatch):
     monkeypatch.setenv("DB_NAME", "test_db")
 
 
-def test_settings_instantiation(envs):
+def test_settings_class_instantiation(envs):
     settings = Settings()
 
     assert settings.DB_USER == "test_user"
@@ -23,3 +23,9 @@ def test_settings_db_uri(envs):
     assert (
         settings.db_uri == "postgresql://test_user:test_pass@test_host:1234/test_db"
     )
+
+
+def test_settings_object_variables():
+
+    assert settings is not None
+    assert settings.DB_USER == "bizagi_rest"
