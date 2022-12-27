@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "bizagi-rest"
+version = "0.1.0"
+description = "Just a simple API to try Bizagi integration with REST"
+authors = ["André Carvalho <alac1984@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "bizagi_rest"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
