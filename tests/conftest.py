@@ -13,15 +13,12 @@ SessionTesting = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 
 @pytest.fixture(scope="function")
-def create_tables():
+def session():
     Base.metadata.create_all(engine)
-
-
-@pytest.fixture(scope="function")
-def session(create_tables):
     session = SessionTesting()
     yield session
     session.close()
+    Base.metadata.drop_all(engine)
 
 
 @pytest.fixture(scope="function")
