@@ -13,6 +13,6 @@ pydantic
 python-dotenv
 sniffio
 sqlalchemy
-starlette
+starlette==0.22.0
 typing-extensions
 uvicorn
