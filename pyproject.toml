@@ -26,7 +26,25 @@ flake8 = "^6.0.0"
 black = "^22.12.0"
 mypy = "^0.991"
 sqlalchemy2-stubs = "^0.0.2a31"
+flake8-pyproject = "^1.2.2"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 88
+
+[tool.flake8]
+ignore = ['E501', 'W503', 'E203', 'E402', 'E712']
+max-line-length = 88
+exclude = ['.git', 'migrations', 'db/base.py']
+
+[tool.mypy]
+disable_error_code = ['attr-defined', 'import', 'valid-type']
+
+[tool.pytest.ini_options]
+markers = ["integration", "unit"]
+
+[tool.coverage.run]
+omit = ['migrations/env.py']
