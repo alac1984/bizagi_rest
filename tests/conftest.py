@@ -12,7 +12,7 @@ engine = create_engine(test_db_uri)
 SessionTesting = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 
-@pytest.fixture(scope="module")
+@pytest.fixture(scope="function")
 def create_tables():
     Base.metadata.create_all(engine)
 
