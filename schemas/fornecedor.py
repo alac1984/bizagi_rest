@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Optional
 from datetime import date
 from pydantic import BaseModel
 from .compra import CompraShow
@@ -10,7 +10,7 @@ class FornecedorCreate(BaseModel):
 
 
 class FornecedorShow(BaseModel):
-    dataUltimaCompra: date
+    dataUltimaCompra: Optional[date] = None
     rating: int
 
     compras: List[CompraShow] = []
