@@ -1,5 +1,5 @@
 from datetime import date
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 
 class CompraShow(BaseModel):
@@ -11,6 +11,6 @@ class CompraShow(BaseModel):
 
 class CompraCreate(BaseModel):
     forn_id: int
-    date: date
+    buy_date: date = Field(default=date.today(), required=True)
     item: str
     value: float

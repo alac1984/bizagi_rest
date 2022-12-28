@@ -13,7 +13,7 @@ def retrieve_fornecedor_by_id(forn_id: int, session: Session):
         compras_show.append(
             CompraShow(
                 codigoCompra=compra.com_id,
-                dataCompra=compra.date,
+                dataCompra=compra.buy_date,
                 itemCompra=compra.item,
                 valorCompra=compra.value,
             )

@@ -9,11 +9,11 @@ class Compra(Base):
 
     com_id = Column(Integer(), primary_key=True)
     forn_id = Column(ForeignKey("tb_forn.forn_id"))
-    date = Column(Date(), default=datetime.today)
+    buy_date = Column(Date(), default=datetime.today)
     item = Column(String(), nullable=False)
     value = Column(Float(), nullable=False)
 
-    forn = relationship("Fornecedor", backref=backref("compras", order_by=date))  # type: ignore
+    forn = relationship("Fornecedor", backref=backref("compras", order_by=buy_date))  # type: ignore
 
     def __repr__(self):
         return (

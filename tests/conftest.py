@@ -25,8 +25,10 @@ def session():
 def init_db(session):
     forn1 = Fornecedor(name="forn1", rating=5)
     forn2 = Fornecedor(name="forn2", rating=3)
-    com1 = Compra(forn_id=1, date=date(2022, 1, 1), item="Computador", value=3400.01)
-    com2 = Compra(forn_id=1, date=date(2022, 9, 1), item="Carro", value=34580.72)
+    com1 = Compra(
+        forn_id=1, buy_date=date(2022, 1, 1), item="Computador", value=3400.01
+    )
+    com2 = Compra(forn_id=1, buy_date=date(2022, 9, 1), item="Carro", value=34580.72)
     session.add(forn1)
     session.add(forn2)
     session.add(com1)

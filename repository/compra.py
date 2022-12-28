@@ -6,7 +6,7 @@ from schemas.compra import CompraShow, CompraCreate
 def create_compra(com_data: CompraCreate, session: Session):
     compra = Compra(
         forn_id=com_data.forn_id,
-        date=com_data.date,
+        buy_date=com_data.buy_date,
         item=com_data.item,
         value=com_data.value,
     )
@@ -16,7 +16,7 @@ def create_compra(com_data: CompraCreate, session: Session):
 
     return CompraShow(
         codigoCompra=compra.com_id,
-        dataCompra=compra.date,
+        dataCompra=compra.buy_date,
         itemCompra=compra.item,
         valorCompra=compra.value,
     )
