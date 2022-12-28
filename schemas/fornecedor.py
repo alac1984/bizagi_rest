@@ -13,3 +13,9 @@ class FornecedorShow(BaseModel):
     rating: int
 
     compras: list[CompraShow] = []
+
+
+class FornecedorShowFull(BaseModel):
+    forn_id: int
+    name: str
+    rating: int
