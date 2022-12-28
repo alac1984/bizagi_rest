@@ -3,7 +3,7 @@ from pydantic import BaseModel
 
 
 class CompraShow(BaseModel):
-    com_id: int
-    date: date
-    item: str
-    value: float
+    codigoCompra: int
+    dataCompra: date
+    itemCompra: str
+    valorCompra: float

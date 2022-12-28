@@ -1,3 +1,4 @@
+from datetime import date
 from pydantic import BaseModel
 from .compra import CompraShow
 
@@ -8,8 +9,7 @@ class FornecedorCreate(BaseModel):
 
 
 class FornecedorShow(BaseModel):
-    forn_id: int
-    name: str
+    dataUltimaCompra: date
     rating: int
 
     compras: list[CompraShow] = []
