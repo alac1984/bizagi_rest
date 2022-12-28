@@ -7,4 +7,4 @@ def test_retrieve_fornecedor_by_id(init_db, session):
 
     assert forn is not None
     assert isinstance(forn, FornecedorShow)
-    assert forn.forn_id == 1
+    assert len(forn.compras) == 2

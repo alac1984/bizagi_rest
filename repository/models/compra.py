@@ -1,6 +1,6 @@
 from repository.base import Base
 from datetime import datetime
-from sqlalchemy import Column, Integer, String, ForeignKey, DateTime, Float
+from sqlalchemy import Column, Integer, String, ForeignKey, Date, Float
 from sqlalchemy.orm import backref, relationship
 
 
@@ -9,7 +9,7 @@ class Compra(Base):
 
     com_id = Column(Integer(), primary_key=True)
     forn_id = Column(ForeignKey("tb_forn.forn_id"))
-    date = Column(DateTime(), default=datetime.now)
+    date = Column(Date(), default=datetime.today)
     item = Column(String(), nullable=False)
     value = Column(Float(), nullable=False)
 

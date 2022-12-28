@@ -1,7 +1,5 @@
 from repository.base import Base
-from datetime import datetime
-from sqlalchemy import Column, Integer, String, ForeignKey, DateTime, Float
-from sqlalchemy.orm import backref, relationship
+from sqlalchemy import Column, Integer, String
 
 
 class Fornecedor(Base):
