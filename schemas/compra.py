@@ -7,3 +7,10 @@ class CompraShow(BaseModel):
     dataCompra: date
     itemCompra: str
     valorCompra: float
+
+
+class CompraCreate(BaseModel):
+    forn_id: int
+    date: date
+    item: str
+    value: float
