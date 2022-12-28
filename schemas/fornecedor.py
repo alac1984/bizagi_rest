@@ -1,3 +1,4 @@
+from typing import List
 from datetime import date
 from pydantic import BaseModel
 from .compra import CompraShow
@@ -12,7 +13,7 @@ class FornecedorShow(BaseModel):
     dataUltimaCompra: date
     rating: int
 
-    compras: list[CompraShow] = []
+    compras: List[CompraShow] = []
 
 
 class FornecedorShowFull(BaseModel):
